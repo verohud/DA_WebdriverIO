@@ -7,7 +7,7 @@
     "test": "wdio wdio.conf.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vojtech Cerveny",
   "license": "ISC",
   "devDependencies": {
     "@wdio/cli": "^6.5.0",
