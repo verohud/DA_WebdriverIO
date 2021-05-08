@@ -142,30 +142,102 @@
 
 
 
-describe('Domaci ukol 2', () => {
-    it('print Hint, count the paragraphs, click 10 times on the button Dam like and take a screenshot', () => {
+// describe('Domaci ukol 2', () => {
+//     it('print Hint, count the paragraphs, click 10 times on the button Dam like and take a screenshot', () => {
       
-        browser.url(' https://automation.cervik.repl.co/selectors.html'); 
-        browser.pause(2000)
+//         browser.url(' https://automation.cervik.repl.co/selectors.html'); 
+//         browser.pause(2000)
 
-        let elemHint = $('.card.hint');                         //find the section Hint on the page
-        console.log(elemHint.getText());                         //print the text from the section Hint
+//         let elemHint = $('.card.hint');                         //find the section Hint on the page
+//         console.log(elemHint.getText());                         //print the text from the section Hint
 
-        let ParagraphsNumber = browser.$$('#pohadka p')     //find all the paragraphs on the page
-        console.log(ParagraphsNumber.length);               //print the number of the paragraphs
+//         let ParagraphsNumber = browser.$$('#pohadka p')     //find all the paragraphs on the page
+//         console.log(ParagraphsNumber.length);               //print the number of the paragraphs
 
-        let giveLike = browser.$('#like-button')            //find the button Dam like!
-        let CountLikes = browser.$('#lvlAwesome')           //find the counter of likes
+//         let damLike = browser.$('#like-button')            //find the button Dam like!
+//         let CountLikes = browser.$('#lvlAwesome')           //find the counter of likes
 
-        CountLikes.scrollIntoView()                         //scroll down the page to see what's happening with the counter
+//         CountLikes.scrollIntoView()                         //scroll down the page to see what's happening with the counter
 
-        for (let i=0; i<9; i=i+1){                          //clicking on the button Dam like 10 times
-            giveLike.click()
-            browser.pause(2000)
-        }         
+//         for (let i=0; i<9; i=i+1){                          //clicking on the button Dam like 10 times
+//             damLike.click()
+//             browser.pause(2000)
+//         }         
    
-        browser.saveScreenshot('./ukol2.png')               //take a screenshot of the page and save it
+//         browser.saveScreenshot('./ukol2.png')               //take a screenshot of the page and save it
+//     });
+// });
+
+
+// describe('Domaci ukol 2', () => {
+    //     it('print Hint, count the paragraphs, click 10 times on the button Dam like and take a screenshot', () => {
+          
+    //         browser.url(' https://automation.cervik.repl.co/selectors.html'); 
+    //         browser.pause(2000)
+    
+    //         let elemHint = $('.card.hint');                         //find the section Hint on the page
+    //         console.log(elemHint.getText());                         //print the text from the section Hint
+    
+    //         let ParagraphsNumber = browser.$$('#pohadka p')     //find all the paragraphs on the page
+    //         console.log(ParagraphsNumber.length);               //print the number of the paragraphs
+    
+    //         let damLike = browser.$('#like-button')            //find the button Dam like!
+    //         let CountLikes = browser.$('#lvlAwesome')           //find the counter of likes
+    
+    //         CountLikes.scrollIntoView()                         //scroll down the page to see what's happening with the counter
+    
+    //         for (let i=0; i<9; i=i+1){                          //clicking on the button Dam like 10 times
+    //             damLike.click()
+    //             browser.pause(2000)
+    //         }         
+       
+    //         browser.saveScreenshot('./ukol2.png')               //take a screenshot of the page and save it
+    //     });
+    // });
+
+
+    describe('Domaci ukol 3 - Happiness app Kitty basic features', () => {
+
+        before(()=>{
+            browser.url('https://automation.cervik.repl.co/adding.html');
+        })
+
+        beforeEach(()=>{
+
+            let PridejKocku = $('#addItem')         //find the button Pridej kocku
+            for (let i=0; i<5; i=i+1){             //click 5 times on the button Pridej kocku
+                PridejKocku.click() 
+            }  
+            
+        })
+
+        it('5 cat cards are added after clicking on the button Pridej kocku', ()=>{
+
+            let catCard = $$('.card.cat')               //find the cat cards           
+            expect(catCard).toBeElementsArrayOfSize(5)  //make sure there are 5 cat cards added
+                  
+        });
+    
+        it ('All cat cards are erased after clicking on the button Apokalypsa!', ()=>{
+
+            let Apokalypsa = $('#removeAll').click()                      //find the button Apokalypsa! and click on it
+            // let catCard = $$('.card.cat')                //find the cat cards
+        
+            // expect(catCard).toBeElementsArrayOfSize(0)   //make sure there aren't any cards
+            expect(Apokalypsa).toHaveAttribute('#removeAll disabled')
+        });
+    
+        it ('The likes counter reacts to an addition, a single deletion or a deletion of all cat cards ', ()=>{
+            
+           
+            let Pocitadlo = $('#counter')           //find the likes counter
+            expect(Pocitadlo).toHaveText('5')       //make sure the likes counter shows number 5
+
+            $('#removeItem').click()                //find the button Odeber kocku and click on it
+            expect(Pocitadlo).toHaveText('4')       //make sure the likes counter shows number 4
+
+            $('#removeAll').click()                 //find the button Apokalypsa! and click to erase all cat cards
+            expect(Pocitadlo).toHaveText('0')       //make sure the cat cards are erased, the likes counter shows 0
+    
+        });
     });
-});
-
-
