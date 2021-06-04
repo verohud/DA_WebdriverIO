@@ -3,7 +3,7 @@ let pomocnik = require("../utils")
 let start = require("../index")
 
 describe('Cviceni 2', () => {
-    it('se otevře v prohlížeci a počká 5sekund než se prohlížeč zavře', () => {
+    it('save screenshots, show Page info', () => {
 
 
         browser.url('');

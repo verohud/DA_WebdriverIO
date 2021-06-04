@@ -1,6 +1,6 @@
 
 describe('Cviceni 1', () => {
-    it('se otevře v prohlížeci a počká 5sekund než se prohlížeč zavře', () => {
+    it('login and assert', () => {
 
         browser.url("/");
         browser.saveScreenshot('./czechitas.png');

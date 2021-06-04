@@ -1,6 +1,6 @@
 
 describe('Web Czechitas', () => {
-    it('se otevře v prohlížeci a počká 5sekund než se prohlížeč zavře', () => {
+    it('opens in the browser and waits for 5 sec', () => {
         // Jdi na adresu https://www.czechitas.cz/cs
         browser.url('https://www.czechitas.cz/cs/');
 
