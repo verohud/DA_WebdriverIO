@@ -53,7 +53,7 @@ describe('Find Czechitas link on Google', () => {
 
    });
 
-  // describe('V googlu vyhledám Czechitas', () => {
+  // describe(Find Czechitas website in Google', () => {
   //   it('a otevřu první odkaz', () => {
 
   //       //jde na stránku google.com
