@@ -16,19 +16,19 @@ ZADANI:
 
 
 
-// describe('Find 🦊',()=>{
+describe('Find 🦊',()=>{
 
-//   it('should detect when the fox is visible', () => {
+  it('should detect when the fox is visible', () => {
 
-//     browser.url(' https://automation.cervik.repl.co/findfox.html');
+    browser.url(' https://automation.cervik.repl.co/findfox.html');
 
-//     let fox = $('button.btn=🦊')                                     //find the fox in the button
-//     fox.waitForDisplayed({ timeout: 30000, interval: 30 })           //wait for the button to display the fox
-//     fox.click();                                                     //click on the button with the fox
-//     browser.saveScreenshot('./listicka.png')                         //take a screenshot and save it
-//     browser.pause(3000)                                              //enjoy the outcome
+    let fox = $('button.btn=🦊')                                     //find the fox in the button
+    fox.waitForDisplayed({ timeout: 30000, interval: 30 })           //wait for the button to display the fox
+    fox.click();                                                     //click on the button with the fox
+    browser.saveScreenshot('./listicka.png')                         //take a screenshot and save it
+    browser.pause(3000)                                              //enjoy the outcome
 
-//     expect(fox).toBeDisplayed();                                     //make sure the button is displaying a fox
+    expect(fox).toBeDisplayed();                                     //make sure the button is displaying a fox
 
-// });
-// });
+});
+});
