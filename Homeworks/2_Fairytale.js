@@ -1,4 +1,7 @@
-describe('Fairytale, () => {
+//Homework 2
+
+
+describe('Fairytale', () => {
     it('print Hint, count the paragraphs, click 10 times on the button Dam like and take a screenshot', () => {
       
         browser.url(' https://automation.cervik.repl.co/selectors.html'); 
