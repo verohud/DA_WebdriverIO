@@ -1,24 +1,4 @@
 
-// describe('Google Search Test', () => {
-
-//   it('should have the right title', (done) => {
-//   browser.url('https://google.com/')
-//   browser.pause(3000)
-//   search_box_element = $('[name=\'q\']')
-//   browser.pause(3000)
-//   search_box_element.setValue("BrowserStack\n")
-  
-//   expect(browser).toHaveTitle("BrowserStack - Google Search");
-
-//   browser.pause(3000)
-  
-//   //title of the launched webpage is printed in console as output
-  
-//   // const pagetitle = browser.getTitle()
-//   // console.log(‘Title of the webpage is - + pagetitle)
-//   })
-  
-//   })
 
 describe('Find Czechitas link on Google', () => {
 
@@ -52,6 +32,7 @@ describe('Find Czechitas link on Google', () => {
     });
 
    });
+
 
   // describe(Find Czechitas website in Google', () => {
   //   it('a otevřu první odkaz', () => {
